@@ -10,16 +10,16 @@ int CALLBACK WinMain(
 	try
 	{
 
-			Window wnd(800, 300, "JCAD 2");
+		Window wnd(800, 300, "JCAD 2");
 
-			//Message Loop 
-			MSG msg;
-			BOOL gResult;
-			while (gResult=(GetMessage(&msg, nullptr, 0, 0)) > 0)
-			{
-				TranslateMessage(&msg);
-				DispatchMessage(&msg);
-			}
+		//Message Loop 
+		MSG msg;
+		BOOL gResult;
+		while (gResult=(GetMessage(&msg, nullptr, 0, 0)) > 0)
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
 		if (gResult == -1)
 		{
 			return -1;
