@@ -21,3 +21,5 @@ JCAD2/.vs/JCAD2/v16/ipch/AutoPCH/666c4d143e14ae3a/WINMAIN.ipch
 JCAD2/.vs/JCAD2/v16/ipch/AutoPCH/772ca3de8a188c03/WINDOW.ipch
 JCAD2/.vs/JCAD2/v16/ipch/AutoPCH/ac55bc4925b7e9de/WINDOW.ipch
 JCAD2/.vs/JCAD2/v16/ipch/AutoPCH/fd60d8f91deef786/CHILIWIN.ipch
+*.db
+JCAD2/.vs/JCAD2/v16/Browse.VC.opendb

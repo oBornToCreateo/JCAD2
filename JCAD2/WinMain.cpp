@@ -7,9 +7,9 @@ int CALLBACK WinMain(
 	int       nCmdShow)
 
 {
-	Window wnd(800, 300, "Donkey Fart Box");
+	Window wnd(800, 300, "JCAD 2");
 
-	//Message Loop
+	//Message Loop 
 	MSG msg;
 	BOOL gResult;
 	while (gResult=(GetMessage(&msg, nullptr, 0, 0)) > 0)
