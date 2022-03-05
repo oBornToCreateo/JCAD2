@@ -80,9 +80,25 @@ Window::Window(int width, int height, const char* name) noexcept
 		CW_USEDEFAULT, CW_USEDEFAULT, wr.right - wr.left, wr.bottom - wr.top,
 		nullptr, nullptr, WindowClass::GetInstance(), this
 	);
-	// show window
+
+	// check for error
+	if (hWnd == nullptr)
+	{
+		throw CHWND_LAST_EXCEPT();
+	}
+	// newly created windows start off as hidden
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
+	// create graphics object
+	pGfx = std::make_unique<Graphics>(hWnd);
 }
+
+
+Graphics& Window::Gfx()
+{
+	return *pGfx;
+}
+
+
 
 Window::~Window()
 {
@@ -278,3 +294,27 @@ std::string Window::Exception::GetErrorString() const noexcept
 {
 	return TranslateErrorCode(hr);
 }
+
+
+std::optional<int> Window::ProcessMessages()
+{
+	MSG msg;
+	// while queue has messages, remove and dispatch them (but do not block on empty queue)
+	while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+	{
+		// check for quit because peekmessage does not signal this via return val
+		if (msg.message == WM_QUIT)
+		{
+			// return optional wrapping int (arg to PostQuitMessage is in wparam) signals quit
+			return (int)msg.wParam;
+		}
+
+		// TranslateMessage will post auxilliary WM_CHAR messages from key msgs
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+
+	// return empty optional when not quitting app
+	return {};
+}
+
