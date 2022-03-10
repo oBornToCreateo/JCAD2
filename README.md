@@ -1,12 +1,28 @@
 # JCAD2
-I want to create simple CAD software in 1 year
+
+I want to create 'simple' CAD software in 1 year
 
 My assumptions :
-- Creation of sketches (line, arc, circle, cutting, closing, snapping, maybe ellipse and spline);
-- Extrusion of created sketch;
 
-Additionally 
-- finding intersections in 3D (BOOL operations);
-- finding arc length;
-- finding moments of inertia/mass by density of solids;
-- Creation of parametric curves/surfaces;
+- Creation of sketches:
+  - Polyline, 
+  - Arc, 
+  - Circle,
+  - (additionally) Ellipse,
+  - (additionally) Spline,
+
+- Connection nodes:
+  - Snapping,
+  - Tangtency,
+  - Collinearity,
+  - Parallelism, 
+  - Perpendicularity,
+  - Concentricity,
+
+- Functions:
+  - Cutting (2d intersection),
+  - (additionally) Extrusion in 3D of created sketches,
+  - (additionally) Finding intersections in 3d (BOOL operations),
+  - (additionally) Finding arc length,
+  - (additionally) Finding moments of inertia/mass by density of solids,
+  - (additionally) Creation of parametric curves/surfaces,
