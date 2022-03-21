@@ -1,6 +1,6 @@
 # JCAD2
 
-I want to create 'simple' CAD software in 1 year
+I want to create 'simple' CAD software 
 
 My assumptions :
 
